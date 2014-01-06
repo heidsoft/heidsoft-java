@@ -1,0 +1,221 @@
+java中的properties文件是一种配置文件，主要用于表达配置信息，文件类型为*.properties，格式为文本文件，文件的内容是格式是"键=值"的格式，在properties
+ 
+文件中，可以用"#"来作注释，properties文件在Java编程中用到的地方很多，操作很方便。
+ 一、properties文件
+ 
+test.properties
+ ------------------------------------------------------
+ #################################
+ #   工商报表应用IcisReport的配置文件#
+ #   日期：2006年11月21日 #
+ #################################
+ #
+ #   说明:业务系统TopIcis和报表系统IcisReport是分离的
+ #   可分开部署到不同的服务器上，也可以部署到同一个服务
+ #   器上;IcisReprot作为独立的web应用程序可以使用任何
+ #   的Servlet容器或者J2EE服务器部署并单独运行，也可以
+ #   通过业务系统的接口调用作为业务系统的一个库来应用.
+ #
+ #   IcisReport的ip
+ IcisReport.server.ip=192.168.3.143
+ #   IcisReport的端口
+ IcisReport.server.port=8080
+ #   IcisReport的上下文路径
+ IcisReport.contextPath=/IcisReport
+ 
+------------------------------------------------------ 
+ Properties类的重要方法
+ Properties 类存在于胞 Java.util 中，该类继承自 Hashtable
+ 1． getProperty ( String  key) ，   用指定的键在此属性列表中搜索属性。也就是通过参数 key ，得到 key 所对应的 value。
+ 2． load ( InputStream  inStream) ，从输入流中读取属性列表（键和元素对）。通过对指定的文件（比如说上面的 test.properties 文件）进行装载来获取该文
+ 
+件中的所有键 - 值对。以供 getProperty ( String  key) 来搜索。
+ 3． setProperty ( String  key, String  value) ，调用 Hashtable 的方法 put 。他通过调用基类的put方法来设置 键 - 值对。 
+ 4． store ( OutputStream  out, String  comments) ，   以适合使用 load 方法加载到 Properties 表中的格式，将此 Properties 表中的属性列表（键和元素
+ 
+对）写入输出流。与 load 方法相反，该方法将键 - 值对写入到指定的文件中去。
+ 5． clear () ，清除所有装载的 键 - 值对。该方法在基类中提供。
+ -------------------------------
+ 
+二、操作properties文件的java方法 
+ 
+读属性文件
+ Properties prop = new Properties();
+ InputStream in = getClass().getResourceAsStream("/IcisReport.properties");
+ prop.load(in);
+ Set keyValue = prop.keySet();
+ for (Iterator it = keyValue.iterator(); it.hasNext();)
+ {
+ String key = (String) it.next();
+ }
+ ------------------------
+ outputFile = new FileOutputStream(fileName);
+ propertie.store(outputFile, description);
+ outputFile.close();
+ -----------------------------------------------------------------------------------------
+ Class.getResourceAsStream ("/some/pkg/resource.properties");
+ ClassLoader.getResourceAsStream ("some/pkg/resource.properties");
+ java.util.ResourceBundle rs = java.util.ResourceBundle.getBundle("some.pkg.resource");
+ rs.getString("xiaofei");
+ -----------------------------------------------------------------------------------------
+ 写属性文件
+ Configuration saveCf = new Configuration();
+ saveCf.setValue("min", "10");
+ saveCf.setValue("max", "1000");
+ saveCf.saveFile(".\config\save.perperties","test");
+ 
+总结：java的properties文件需要放到classpath下面，这样程序才能读取到，有关classpath实际上就是java类或者库的存放路径，在java工程中，properties放到
+ 
+class文件一块。在web应用中，最简单的方法是放到web应用的WEB- INF\classes目录下即可，也可以放在其他文件夹下面，这时候需要在设置classpath环境变量的
+ 
+时候，将这个文件夹路径加到 classpath变量中，这样也也可以读取到。在此，你需要对classpath有个深刻理解，classpath绝非系统中刻意设定的那个系统环境变
+ 
+
+量，WEB-INF\classes其实也是，java工程的class文件目录也是。
+ 
+发个例子大家自己看哈.
+ package control;
+ 
+import java.io.BufferedInputStream;
+ import java.io.FileInputStream;
+ import java.io.FileOutputStream;
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.OutputStream;
+ import java.util.Enumeration;
+ import java.util.Properties;
+ 
+public class TestMain {
+  
+  //根据key读取value
+  public static String readValue(String filePath,String key) {
+   Properties props = new Properties();
+         try {
+          InputStream in = new BufferedInputStream (new FileInputStream(filePath));
+          props.load(in);
+          String value = props.getProperty (key);
+             System.out.println(key+value);
+             return value;
+         } catch (Exception e) {
+          e.printStackTrace();
+          return null;
+         }
+  }
+  
+  //读取properties的全部信息
+     public static void readProperties(String filePath) {
+      Properties props = new Properties();
+         try {
+          InputStream in = new BufferedInputStream (new FileInputStream(filePath));
+          props.load(in);
+             Enumeration en = props.propertyNames();
+              while (en.hasMoreElements()) {
+               String key = (String) en.nextElement();
+                     String Property = props.getProperty (key);
+                     System.out.println(key+Property);
+                 }
+         } catch (Exception e) {
+          e.printStackTrace();
+         }
+     }
+ 
+    //写入properties信息
+     public static void writeProperties(String filePath,String parameterName,String parameterValue) {
+      Properties prop = new Properties();
+      try {
+       InputStream fis = new FileInputStream(filePath);
+             //从输入流中读取属性列表（键和元素对）
+             prop.load(fis);
+             //调用 Hashtable 的方法 put。使用 getProperty 方法提供并行性。
+             //强制要求为属性的键和值使用字符串。返回值是 Hashtable 调用 put 的结果。
+             OutputStream fos = new FileOutputStream(filePath);
+             prop.setProperty(parameterName, parameterValue);
+             //以适合使用 load 方法加载到 Properties 表中的格式，
+             //将此 Properties 表中的属性列表（键和元素对）写入输出流
+             prop.store(fos, "Update '" + parameterName + "' value");
+         } catch (IOException e) {
+          System.err.println("Visit "+filePath+" for updating "+parameterName+" value error");
+         }
+     }
+ 
+    public static void main(String[] args) {
+      readValue("info.properties","url");
+         writeProperties("info.properties","age","21");
+         readProperties("info.properties" );
+         System.out.println("OK");
+     }
+ 
+
+ 发个例子大家自己看哈.
+ 
+package control;
+ 
+import java.io.BufferedInputStream;
+ import java.io.FileInputStream;
+ import java.io.FileOutputStream;
+ import java.io.IOException;
+ import java.io.InputStream;
+ import java.io.OutputStream;
+ import java.util.Enumeration;
+ import java.util.Properties;
+ 
+public class TestMain {
+  
+  //根据key读取value
+  public static String readValue(String filePath,String key) {
+   Properties props = new Properties();
+         try {
+          InputStream in = new BufferedInputStream (new FileInputStream(filePath));
+          props.load(in);
+          String value = props.getProperty (key);
+             System.out.println(key+value);
+             return value;
+         } catch (Exception e) {
+          e.printStackTrace();
+          return null;
+         }
+  }
+  
+  //读取properties的全部信息
+     public static void readProperties(String filePath) {
+      Properties props = new Properties();
+         try {
+          InputStream in = new BufferedInputStream (new FileInputStream(filePath));
+          props.load(in);
+             Enumeration en = props.propertyNames();
+              while (en.hasMoreElements()) {
+               String key = (String) en.nextElement();
+                     String Property = props.getProperty (key);
+                     System.out.println(key+Property);
+                 }
+         } catch (Exception e) {
+          e.printStackTrace();
+         }
+     }
+ 
+    //写入properties信息
+     public static void writeProperties(String filePath,String parameterName,String parameterValue) {
+      Properties prop = new Properties();
+      try {
+       InputStream fis = new FileInputStream(filePath);
+             //从输入流中读取属性列表（键和元素对）
+             prop.load(fis);
+             //调用 Hashtable 的方法 put。使用 getProperty 方法提供并行性。
+             //强制要求为属性的键和值使用字符串。返回值是 Hashtable 调用 put 的结果。
+             OutputStream fos = new FileOutputStream(filePath);
+             prop.setProperty(parameterName, parameterValue);
+             //以适合使用 load 方法加载到 Properties 表中的格式，
+             //将此 Properties 表中的属性列表（键和元素对）写入输出流
+             prop.store(fos, "Update '" + parameterName + "' value");
+         } catch (IOException e) {
+          System.err.println("Visit "+filePath+" for updating "+parameterName+" value error");
+         }
+     }
+ 
+    public static void main(String[] args) {
+      readValue("info.properties","url");
+         writeProperties("info.properties","age","21");
+         readProperties("info.properties" );
+         System.out.println("OK");
+     }
+ }
