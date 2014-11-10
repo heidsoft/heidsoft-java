@@ -1,14 +1,17 @@
+package heidsoft.test;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
 /**
- * ������
+ *
  *
  * @author heidsoft
  *         http://www.javaworld.com/article/2071275/core-java/when-runtime-exec---won-t.html?page=2
  */
+
 class StreamGobbler extends Thread {
     InputStream is;
     String type;
@@ -57,3 +60,4 @@ public class GoodWindowsExec {
     }
 
 }
+
