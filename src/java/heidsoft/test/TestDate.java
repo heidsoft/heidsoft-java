@@ -1,8 +1,9 @@
+package heidsoft.test;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * ʱ�䴦��Ƚ�
  *
  * @author heidsoft
  */

@@ -1,7 +1,6 @@
 package heidsoft.collection;
 
 /**
- * �Ƚ�ArrayList �� LinkList
  *
  * @author heidsoft
  */
