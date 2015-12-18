@@ -3,8 +3,6 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStreamReader;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
 
 public class TestVNC {
     public static void main(String[] args) {

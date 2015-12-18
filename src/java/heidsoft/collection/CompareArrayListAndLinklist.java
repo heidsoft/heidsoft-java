@@ -1,7 +1,6 @@
 package heidsoft.collection;
 
 /**
- *
  * @author heidsoft
  */
 public class CompareArrayListAndLinklist {
