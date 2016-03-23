@@ -7,10 +7,13 @@ package heidsoft.test;
  */
 public class TestVolatile {
     public static volatile int race = 0;
+
     public static void increase() {
         race++;
     }
+
     private static final int THREADS_COUNT = 20;
+
     public static void main(String[] args) {
         Thread[] threads = new Thread[THREADS_COUNT];
         for (int i = 0; i < THREADS_COUNT; i++) {
