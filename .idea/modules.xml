@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/src/JavaCore.iml" filepath="$PROJECT_DIR$/src/JavaCore.iml" />
+      <module fileurl="file://$PROJECT_DIR$/heidsoft-java.iml" filepath="$PROJECT_DIR$/heidsoft-java.iml" />
     </modules>
   </component>
 </project>

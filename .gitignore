@@ -1,3 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 HeidsoftJava.iml
 .project
+*.exe
+.idea
+heidsoft-java.iml
