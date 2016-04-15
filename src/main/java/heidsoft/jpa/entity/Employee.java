@@ -2,6 +2,7 @@ package heidsoft.jpa.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.TableGenerator;
 
 /**
  * <code>Employee</code>
@@ -11,6 +12,8 @@ import javax.persistence.Id;
  * @author:liubin(wind.b.liu@leaptocloud.com)
  * @date:2016/3/23 13:41
  */
+@TableGenerator(name = "Emp_Gen",table = "ID_GEN",
+        pkColumnName = "GEN_NAME",valueColumnName = "GEN_VAL")
 @Entity
 public class Employee {
     @Id

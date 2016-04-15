@@ -5,6 +5,7 @@ import heidsoft.jpa.entity.Employee;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.criteria.CriteriaQuery;
 
 /**
  * <code>EntityManagerApp</code>
@@ -36,6 +37,9 @@ public class EntityManagerApp {
             entityManager.remove(employee1);
 
             entityManager.getTransaction().commit();
+
+            CriteriaQuery<Object> criteriaQuery = entityManager.getCriteriaBuilder().createQuery();
+            criteriaQuery.from(Employee.class);
         } finally {
             entityManager.close();
             entityManagerFactory.close();
