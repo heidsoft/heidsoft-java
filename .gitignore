@@ -2,5 +2,7 @@
 HeidsoftJava.iml
 .project
 *.exe
+build
+.gradle
 .idea
 heidsoft-java.iml
