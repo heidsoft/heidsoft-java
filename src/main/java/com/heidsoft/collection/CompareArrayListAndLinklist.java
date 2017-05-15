@@ -1,4 +1,4 @@
-package heidsoft.collection;
+package com.heidsoft.collection;
 
 /**
  * @author heidsoft

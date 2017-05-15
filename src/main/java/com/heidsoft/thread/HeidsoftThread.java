@@ -1,21 +1,13 @@
-package heidsoft.thread;
+package com.heidsoft.thread;
 
 import java.util.concurrent.TimeUnit;
 
 /**
  * @author heidsoft
  */
-public class HeidsoftThreadSync {
+public class HeidsoftThread {
+
     private static boolean stopRequested;
-
-    private synchronized static void stopRequested() {//д����ͬ��
-        stopRequested = true;
-    }
-
-    private synchronized static boolean reqeustStop() {//������
-        return stopRequested;
-    }
-
 
     public static void main(String[] args) throws InterruptedException {
         Thread backGroudThread = new Thread(new Runnable() {
@@ -25,7 +17,7 @@ public class HeidsoftThreadSync {
             @Override
             public void run() {
 
-                while (!reqeustStop()) {
+                while (!stopRequested) {
                     i++;
                     System.out.println("i=" + i);
                 }
@@ -37,7 +29,7 @@ public class HeidsoftThreadSync {
 
         TimeUnit.SECONDS.sleep(1L);
 
-        stopRequested();
+        stopRequested = true;
     }
 
 }

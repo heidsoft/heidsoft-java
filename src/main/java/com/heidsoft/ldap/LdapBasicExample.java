@@ -1,4 +1,4 @@
-package heidsoft.ldap;
+package com.heidsoft.ldap;
 
 import javax.naming.Context;
 import javax.naming.NamingEnumeration;

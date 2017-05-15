@@ -1,6 +1,6 @@
-package heidsoft.jpa;
+package com.heidsoft.jpa;
 
-import heidsoft.jpa.entity.Employee;
+import com.heidsoft.jpa.entity.Employee;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

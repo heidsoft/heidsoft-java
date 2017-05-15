@@ -1,4 +1,4 @@
-package heidsoft.jpa.entity;
+package com.heidsoft.jpa.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
