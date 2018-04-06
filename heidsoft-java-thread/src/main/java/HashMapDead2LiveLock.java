@@ -12,7 +12,7 @@ public class HashMapDead2LiveLock implements Callable<Integer> {
         return getInteger(results);
     }
 
-    private static Integer getInteger(Map<Integer, Integer> results) throws InterruptedException {
+    static Integer getInteger(Map<Integer, Integer> results) throws InterruptedException {
         results.put(1, 1);
         results.put(2, 2);
         results.put(3, 3);

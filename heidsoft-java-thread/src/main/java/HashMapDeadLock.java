@@ -4,6 +4,8 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+
 /**
  *
  * @description 非线程安全的Map测试
@@ -17,7 +19,23 @@ public class HashMapDeadLock implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
-        return getInteger(results);
+        results.put(1, 1);
+        results.put(2, 2);
+        results.put(3, 3);
+
+        for (int i = 0; i < 1000; i++) {
+            results.put(i, i);
+        }
+
+        Thread.sleep(1000);
+
+        for (int i= 0; i < 1000; i++) {
+            results.remove(i);
+        }
+
+        System.out.println(" ---- " + Thread.currentThread().getName()  + "     " + results.get(0));
+
+        return results.get(1);
     }
 
 
