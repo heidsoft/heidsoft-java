@@ -9,6 +9,10 @@ public class HashMapDead2LiveLock implements Callable<Integer> {
 
     @Override
     public Integer call() throws Exception {
+        return getInteger(results);
+    }
+
+    private static Integer getInteger(Map<Integer, Integer> results) throws InterruptedException {
         results.put(1, 1);
         results.put(2, 2);
         results.put(3, 3);
