@@ -1,12 +1,10 @@
 package heidsoft.collection;
 
 /**
- * @author heidsoft
- */
+ * @program: heidsoft-java
+ * @description: 测试链表
+ * @author: heidsoft
+ * @create: 2018-06-21 13:27
+ **/
 public class CompareArrayListAndLinklist {
-
-
-    public static void main(String[] args) {
-
-    }
 }
