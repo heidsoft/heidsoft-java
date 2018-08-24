@@ -1,0 +1,18 @@
+Java HotSpot(TM) 64-Bit Server VM (25.144-b01) for bsd-amd64 JRE (1.8.0_144-b01), built on Jul 21 2017 22:07:42 by "java_re" with gcc 4.2.1 (Based on Apple Inc. build 5658) (LLVM build 2336.11.00)
+Memory: 4k page, physical 8388608k(247580k free)
+
+/proc/meminfo:
+
+CommandLine flags: -XX:InitialHeapSize=20971520 -XX:MaxHeapSize=20971520 -XX:MaxNewSize=10485760 -XX:NewSize=10485760 -XX:+PrintGC -XX:+PrintGCDetails -XX:+PrintGCTimeStamps -XX:SurvivorRatio=3 -XX:+UseCompressedClassPointers -XX:+UseCompressedOops -XX:+UseParallelGC 
+0.426: [GC (Allocation Failure) [PSYoungGen: 6001K->1552K(8192K)] 6001K->4632K(18432K), 0.0135427 secs] [Times: user=0.00 sys=0.01, real=0.02 secs] 
+0.441: [GC (Allocation Failure) [PSYoungGen: 6789K->1552K(8192K)] 9869K->9752K(18432K), 0.0141816 secs] [Times: user=0.01 sys=0.00, real=0.01 secs] 
+0.455: [Full GC (Ergonomics) [PSYoungGen: 1552K->0K(8192K)] [ParOldGen: 8200K->9640K(10240K)] 9752K->9640K(18432K), [Metaspace: 3281K->3281K(1056768K)], 0.0077403 secs] [Times: user=0.00 sys=0.00, real=0.01 secs] 
+Heap
+ PSYoungGen      total 8192K, used 2404K [0x00000007bf600000, 0x00000007c0000000, 0x00000007c0000000)
+  eden space 6144K, 39% used [0x00000007bf600000,0x00000007bf8592a0,0x00000007bfc00000)
+  from space 2048K, 0% used [0x00000007bfe00000,0x00000007bfe00000,0x00000007c0000000)
+  to   space 2048K, 0% used [0x00000007bfc00000,0x00000007bfc00000,0x00000007bfe00000)
+ ParOldGen       total 10240K, used 9640K [0x00000007bec00000, 0x00000007bf600000, 0x00000007bf600000)
+  object space 10240K, 94% used [0x00000007bec00000,0x00000007bf56a0a8,0x00000007bf600000)
+ Metaspace       used 3288K, capacity 4496K, committed 4864K, reserved 1056768K
+  class space    used 364K, capacity 388K, committed 512K, reserved 1048576K

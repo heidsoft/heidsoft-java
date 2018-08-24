@@ -2,6 +2,9 @@ package heidsoft.thread.lamba;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * lamba 线程使用
+ */
 public class LambaTaskThreadDeme {
 
     public static void  main(String[] args){
