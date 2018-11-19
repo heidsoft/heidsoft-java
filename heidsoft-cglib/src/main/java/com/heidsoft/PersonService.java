@@ -2,7 +2,8 @@ package com.heidsoft;
 
 /**
  * @program: heidsoft-java
- * @description: PersonService
+ * @description: PersonService, https://www.baeldung.com/cglib
+ * <p>cglib测试</p>
  * @author: heidsoft
  * @create: 2018-11-19 19:33
  **/
