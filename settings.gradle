@@ -19,4 +19,5 @@ rootProject.name = 'heidsoft-java'
 include 'heidsoft-java-thread'
 include 'heidsoft-java-io'
 include 'heidsoft-docker-jvm'
+include 'heidsoft-cglib'
 
