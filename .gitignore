@@ -60,5 +60,7 @@ fabric.properties
 out
 heidsoft-docker-jvm/build
 heidsoft-cglib/target
+heidsoft-aop/target
+heidsoft-aop/heidsoft-aop.iml
 
 gradle
