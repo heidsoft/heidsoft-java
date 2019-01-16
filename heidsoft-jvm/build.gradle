@@ -20,9 +20,10 @@ repositories {
 }
 
 dependencies {
-    compile group: 'io.netty', name: 'netty-all', version: '4.0.4.Final'
-    compile group: 'javax.persistence', name: 'persistence-api', version: '1.0'
-    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+    // This dependency is found on compile classpath of this component and consumers.
+    compile 'com.google.guava:guava:22.0'
+
+    // Use JUnit test framework
     testCompile 'junit:junit:4.12'
 }
 
