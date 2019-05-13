@@ -4,7 +4,7 @@ include ":heidsoft-java-io",
         ":heidsoft-rxjava",
         ":heidsoft-aop",
         ":heidsoft-cglib",
-        ":heidsoft-java-thread",
+        ":heidsoft-thread",
         ":heidsoft-docker-jvm",
         ":heidsoft-rmi"
 
