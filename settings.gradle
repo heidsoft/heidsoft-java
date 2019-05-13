@@ -1,3 +1,10 @@
 rootProject.name = 'heidsoft-java'
-include 'heidsoft-java-io'
+include ":heidsoft-java-io",
+        ":heidsoft-jvm",
+        ":heidsoft-rxjava",
+        ":heidsoft-aop",
+        ":heidsoft-cglib",
+        ":heidsoft-java-thread",
+        ":heidsoft-docker-jvm",
+        ":heidsoft-rmi"
 

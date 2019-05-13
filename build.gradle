@@ -1,0 +1,9 @@
+allprojects {
+    task("hello") {
+        println("hello "+project.name)
+    }
+}
+
+subprojects {
+    
+}
