@@ -7,4 +7,5 @@ include ":heidsoft-java-io",
         ":heidsoft-thread",
         ":heidsoft-docker-jvm",
         ":heidsoft-rmi"
+include 'heidsoft-lucene'
 
