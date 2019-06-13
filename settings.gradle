@@ -8,4 +8,5 @@ include ":heidsoft-java-io",
         ":heidsoft-docker-jvm",
         ":heidsoft-rmi"
 include 'heidsoft-lucene'
+include 'heidsoft-kafka'
 
