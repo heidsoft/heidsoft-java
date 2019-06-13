@@ -18,7 +18,7 @@ JVM性能调优监控工具专题一
 
 ## Java nio
 
-## Java thread
+## Java lock
 
 ## gradle
 

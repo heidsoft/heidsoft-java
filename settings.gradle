@@ -9,4 +9,5 @@ include ":heidsoft-java-io",
         ":heidsoft-rmi"
 include 'heidsoft-lucene'
 include 'heidsoft-kafka'
+include 'heidsoft-logstash'
 
