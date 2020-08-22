@@ -10,4 +10,5 @@ include ":heidsoft-java-io",
 include 'heidsoft-lucene'
 include 'heidsoft-kafka'
 include 'heidsoft-logstash'
+include 'heidsoft-java-thread-state'
 
