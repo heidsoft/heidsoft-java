@@ -1,4 +1,4 @@
-package heidsoft.netty;
+package netty;
 
 import io.netty.channel.ChannelHandlerAdapter;
 

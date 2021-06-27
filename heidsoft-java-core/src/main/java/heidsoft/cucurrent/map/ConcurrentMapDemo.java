@@ -1,4 +1,4 @@
-package heidsoft.concurrent.map;
+package heidsoft.cucurrent.map;
 
 import java.util.Collections;
 import java.util.HashMap;

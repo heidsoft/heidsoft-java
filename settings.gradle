@@ -1,5 +1,5 @@
 rootProject.name = 'heidsoft-java'
-include ":heidsoft-java-io",
+include ":heidsoft-java-core",
         ":heidsoft-jvm",
         ":heidsoft-rxjava",
         ":heidsoft-aop",
@@ -7,7 +7,9 @@ include ":heidsoft-java-io",
         ":heidsoft-thread",
         ":heidsoft-docker-jvm",
         ":heidsoft-rmi"
+include 'heidsoft-netty'
 include 'heidsoft-lucene'
 include 'heidsoft-kafka'
 include 'heidsoft-logstash'
+include 'heidsoft-thread-state'
 

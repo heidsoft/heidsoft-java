@@ -22,7 +22,6 @@ public class HashMapDeadLock implements Callable<Integer> {
         results.put(1, 1);
         results.put(2, 2);
         results.put(3, 3);
-
         for (int i = 0; i < 1000; i++) {
             results.put(i, i);
         }
