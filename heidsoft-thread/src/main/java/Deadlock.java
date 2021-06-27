@@ -19,7 +19,6 @@ public class Deadlock {
     public static void main(String[] args) {
         System.out.println(" 死锁模拟 start ----- ");
         final Object lockObj1 = new Object(), lockObj2 = new Object();
-
         Thread t1 = new Thread("t1") {
             @Override
             public void run() {
