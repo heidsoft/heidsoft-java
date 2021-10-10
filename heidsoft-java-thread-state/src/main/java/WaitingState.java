@@ -8,6 +8,8 @@ public class WaitingState implements Runnable {
         System.out.println("2 " + WaitingState.t1.getState());
     }
 
+
+    @Override
     public void run() {
         Thread t2 = new Thread(new DemoThreadWS());
         t2.setName("t2");
@@ -38,6 +40,7 @@ public class WaitingState implements Runnable {
 }
 
 class DemoThreadWS implements Runnable {
+    @Override
     public void run() {
         try {
             System.out.println("6 " + WaitingState.t1.getState());
