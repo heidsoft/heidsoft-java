@@ -1,4 +1,4 @@
-package com.heidsoft.thread;
+package heidsoft.thread;
 
 import java.util.concurrent.TimeUnit;
 
