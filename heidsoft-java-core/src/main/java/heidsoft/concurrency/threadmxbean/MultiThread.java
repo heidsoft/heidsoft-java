@@ -1,4 +1,4 @@
-package heidsoft.cucurrent.threadmxbean;
+package heidsoft.concurrency.threadmxbean;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadInfo;

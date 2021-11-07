@@ -1,4 +1,4 @@
-package heidsoft.cucurrent.map;
+package heidsoft.concurrency.map;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -44,9 +44,5 @@ public class ConcurrentMapDemo {
         thread1.start();
         thread2.start();
         thread3.start();
-
-
-
-
     }
 }

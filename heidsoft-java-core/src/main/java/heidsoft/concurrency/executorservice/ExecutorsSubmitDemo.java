@@ -1,4 +1,4 @@
-package heidsoft.cucurrent.executorservice;
+package heidsoft.concurrency.executorservice;
 
 import java.util.concurrent.*;
 
