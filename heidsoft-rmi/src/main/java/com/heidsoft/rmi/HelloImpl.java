@@ -1,8 +1,6 @@
 package com.heidsoft.rmi;
 
-import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;
-import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -13,6 +11,7 @@ public class HelloImpl extends UnicastRemoteObject implements Hello{
     public HelloImpl() throws RemoteException {
     }
 
+    @Override
     public String sayHello() {
         return "Hello world";
     }
