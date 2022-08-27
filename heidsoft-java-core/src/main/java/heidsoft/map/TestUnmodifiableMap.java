@@ -1,6 +1,5 @@
 package heidsoft.map;
 
-import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
@@ -19,5 +18,6 @@ public class TestUnmodifiableMap {
         Map<Integer,String> unmodifiableMapBooks = Collections.unmodifiableMap(books);
         unmodifiableMapBooks.put(2,"python");
         System.out.print("end");
+        System.out.print(unmodifiableMapBooks.get(2));
     }
 }
