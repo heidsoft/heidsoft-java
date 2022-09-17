@@ -8,7 +8,7 @@ import java.util.List;
  * 函数式接口，lambda测试
  * 甚至不能把lambda表达式赋给类型为Object的变量，Object不是函数式接口
  * java.util.function包中定义的非常通用的函数式接口
- * {@link java.util.function.Predicate 条件测试} 函数式子，接口验证使用，e->e=="c++"
+ * {@link java.util.function.Predicate } 条件测试,函数式接口验证使用，e->e=="c++"
  * 基于lambda实现的函数式接口,test(T t) 方法
  * <p>
  * Arrays.asList 返回的并不是java.util.ArrayList，而是java.util.Arrays中的子类
