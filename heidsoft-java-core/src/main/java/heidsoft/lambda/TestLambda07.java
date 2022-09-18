@@ -19,6 +19,11 @@ import javax.swing.*;
  * Class::staticMethod  所有参数都传递到静态方法
  * 例如： Math::pow 等价于(x,y)->Math.pow(x,y)
  *
+ * 如果有多个不同名的重载方法，编译器就会尝试从上下文中找出你指的是哪一个方法。
+ * 例如，Math.max方法有两个版本，一个用于整数，一个用于double值。选择哪一个版本取决于Math::max转换为
+ * 哪个函数式接口的方法参数。
+ * 方法引用不能独立存在，总是会转换为函数式的实例。
+ *
  * @author heidsoft
  */
 public class TestLambda07 {
