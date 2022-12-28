@@ -1,0 +1,4 @@
+module heidsoft.hellomod
+{
+
+}
