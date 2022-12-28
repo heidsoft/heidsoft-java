@@ -33,11 +33,16 @@ public class CountLongWords {
         // 基于流方式统计
         // filter 中是条件表达式
         //
-        System.out.println(System.currentTimeMillis());
+        long start = System.currentTimeMillis();
         count = words.stream().filter(w -> w.length() > 5).count();
+        long end = System.currentTimeMillis();
         System.out.println(count);
+        System.out.println(end - start);
 
+        long start2 = System.currentTimeMillis();
         count = words.parallelStream().filter(w -> w.length() > 5).count();
+        long end2 = System.currentTimeMillis();
+        System.out.println(end2 - start2);
         System.out.println(count);
     }
 }
